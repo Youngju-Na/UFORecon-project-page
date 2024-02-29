@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>UFORecon: Generalizable Sparse-View Surface Reconstruction from Arbitrary and UnFavOrable Data Sets</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,21 +52,28 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">UFORecon: Generalizable Sparse-View Surface Reconstruction from Arbitrary and UnFavOrable Data Sets</h1>
+            <h1 class="venue is-size-2">CVPR 2024</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Youngju Na</a><sup>1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Woo Jae Kim</a><sup>1</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Kyu Beom Han</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Suhyeon Ha</a><sup>1</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Sung-eui Yoon</a><sup>1</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup>1</sup>KAIST<br></span>
+                    <!-- <span class="corresponding"><small><br><sup>*</sup>Corresponding Author</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -78,7 +85,7 @@
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>Paper (TBU)</span>
                       </a>
                     </span>
 
@@ -89,7 +96,7 @@
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Supplementary (TBU)</span>
                     </a>
                   </span>
 
@@ -100,7 +107,7 @@
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (TBU)</span>
                   </a>
                 </span>
 
@@ -111,7 +118,7 @@
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (TBU)</span>
                 </a>
               </span>
             </div>
@@ -148,7 +155,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Generalizable neural implicit surface reconstruction aims to obtain an accurate underlying geometry given a limited number of multi-view images from unseen scenes. However, most previous methods select only informative and relevant views using predefined scores for the training and testing phases. This constraint makes the model impractical because we cannot always ensure the availability of favorable combinations in real-world scenarios. We observe that previous methods output degenerate solutions under arbitrary and unfavorable sets. Building upon this finding, we propose UFORecon, a robust view-combination generalizable surface reconstruction framework. To this end, we apply cross-view matching transformers to model interactions between source images and build correlation frustums to capture global correlations. In addition, we explicitly encode pairwise feature similarities as view-consistent priors. Our proposed framework largely outperforms previous methods not only in view-combination generalizability but also in the existing generalizable protocol trained with favorable view-combinations.
           </p>
         </div>
       </div>
@@ -256,11 +263,31 @@
 
 
 
-
+<div class="container">
+  <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+      <li class="nav-item">
+          <a class="nav-link active" onclick="objectSceneEvent(0)">Scan24</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" onclick="objectSceneEvent(1)">Scan37</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" onclick="objectSceneEvent(2)">Scan40</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" onclick="objectSceneEvent(3)">Scan63</a>
+      </li>
+  </ul>
+  <div class="b-dics" style="width: 3000px; font-weight: 600; height: 668.25px; opacity: 1;">
+      
+      
+      
+  <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 204px;"><div class="b-dics__image-container"><p class="b-dics__text">NeuS</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//neus.png" alt="NeuS" class="b-dics__image" style="left: 0px;"></div><div class="b-dics__slider" style="left: 204px;"></div></div><div class="b-dics__section" data-function="b-dics__section" style="flex: 2 0 449px;"><div class="b-dics__image-container"><p class="b-dics__text">Neuralangelo (Ours)</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//ours.png" alt="Neuralangelo (Ours)" class="b-dics__image" style="left: -204px;"></div><div class="b-dics__slider" style="left: 653px;"></div></div><div class="b-dics__section" data-function="b-dics__section" style="flex: 1 1 238px;"><div class="b-dics__image-container"><p class="b-dics__text">NeuralWarp</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//neuralwarp.png" alt="NeuralWarp" class="b-dics__image" style="left: -653px;"></div></div></div>
+</div>
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +297,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
