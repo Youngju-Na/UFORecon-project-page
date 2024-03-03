@@ -36,6 +36,23 @@
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata:300,400,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
+
+  <link rel="stylesheet" href="js/dics/dics.original.css">
+  <script src="static/js/dics/dics.original.js"></script>
+  <script src="static/js/event_handler.js"></script>
+
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -43,6 +60,8 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="static/js/video_comparison.js"></script>
+  <script src="static/js/app.js"></script>
 </head>
 <body>
 
@@ -165,34 +184,106 @@
 <!-- End paper abstract -->
 
 
+
+<!-- Object-centric reconstruction -->
+<hr>
+<h5>Object-centric Reconstruction</h5>
+<div class="container">
+    <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
+        <li class="nav-item">
+            <a class="nav-link active" onclick="objectSceneEvent(0)">Scan24</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="objectSceneEvent(1)">Scan37</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="objectSceneEvent(2)">Scan40</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" onclick="objectSceneEvent(3)">Scan63</a>
+        </li>
+    </ul>
+    <div class="b-dics" style="width: 2000px; font-weight: 600;">
+        <!-- <img src="static/images/carousel1.jpg" alt="NeuS">
+        <img src="static/images/carousel2.jpg" alt="Neuralangelo (Ours)">
+        <img src="static/images/carousel3.jpg" alt="NeuralWarp"> -->
+    </div>
+</div>
+
+<!--/ Paper video. -->
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+      <h3>
+          Reconstruction Results
+      </h3>
+
+      <table width="110%">
+          <tr>
+              <td align="left" valign="top" width="50%">
+                  <div class="video-compare-container" display:block>
+                      <video class="video" id="toaster_mesh" loop playsinline autoPlay muted src="static/videos/scan24_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
+                      <canvas height=0 class="videoMerge" id="toaster_meshMerge"></canvas>
+                  </div>
+              </td>
+              <td align="left" valign="top" width="50%">
+                  <div class="video-compare-container" display:block>
+                      <video class="video" id="toaster_normals" loop playsinline autoPlay muted src="static/videos/scan24_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
+                      <canvas height=0 class="videoMerge" id="toaster_normalsMerge"></canvas>
+                  </div>
+              </td>
+          </tr>
+      </table>
+      
+      <table width="110%">
+          <tr>
+              <td align="left" valign="top" width="50%">
+                  <div class="video-compare-container" display:block>
+                      <video class="video" id="helmet_mesh" loop playsinline autoPlay muted src="static/videos/scan40_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
+                      <canvas height=0 class="videoMerge" id="helmet_meshMerge"></canvas>
+                  </div>
+              </td>
+              <td align="left" valign="top" width="50%" display:block>
+                  <div class="video-compare-container">
+                      <video class="video" id="helmet_normals" loop playsinline autoPlay muted src="static/videos/scan40_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
+                      <canvas height=0 class="videoMerge" id="helmet_normalsMerge"></canvas>
+                  </div>
+              </td>
+          </tr>
+      </table>
+      
+      
+</div>
+</div>
+
+
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
+        
         <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
+        
         <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
+        
         <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
+      
       <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
@@ -201,56 +292,52 @@
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
 
 
-
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
+<!-- <section class="hero is-small"> -->
+  <!-- <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
+            
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
+            
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
+            
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -258,11 +345,26 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
+<!-- <h2 class="title is-3"></h2>
+<table>
+  <tbody>
+    <tr>
+      <td align="left" valign="top" width="50%">
+        <video class="video" preload="auto" id="water5" loop="" playsinline="" autoplay="" muted=""
+          src="static/videos/banner_video.mp4" onplay="resizeAndPlay(this)" style="height: 100px;">
+        </video>
 
+        <canvas class="videoMerge" id="water5Merge"></canvas>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- 
 <div class="container">
   <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
       <li class="nav-item">
@@ -280,10 +382,9 @@
   </ul>
   <div class="b-dics" style="width: 3000px; font-weight: 600; height: 668.25px; opacity: 1;">
       
-      
-      
+    
   <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 204px;"><div class="b-dics__image-container"><p class="b-dics__text">NeuS</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//neus.png" alt="NeuS" class="b-dics__image" style="left: 0px;"></div><div class="b-dics__slider" style="left: 204px;"></div></div><div class="b-dics__section" data-function="b-dics__section" style="flex: 2 0 449px;"><div class="b-dics__image-container"><p class="b-dics__text">Neuralangelo (Ours)</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//ours.png" alt="Neuralangelo (Ours)" class="b-dics__image" style="left: -204px;"></div><div class="b-dics__slider" style="left: 653px;"></div></div><div class="b-dics__section" data-function="b-dics__section" style="flex: 1 1 238px;"><div class="b-dics__image-container"><p class="b-dics__text">NeuralWarp</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//neuralwarp.png" alt="NeuralWarp" class="b-dics__image" style="left: -653px;"></div></div></div>
-</div>
+</div> -->
 
 
 <!-- Paper poster -->
