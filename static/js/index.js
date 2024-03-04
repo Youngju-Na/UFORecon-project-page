@@ -4,7 +4,7 @@
 // With additional modifications based on: https://jsfiddle.net/7sk5k4gp/13/
 
 
-var scans = [24, 63, 65, 69];
+var scans = [24, 40];
 
 
 scan_selection_template = `
@@ -55,7 +55,7 @@ scan_content_template = `
               <model-viewer alt="Scan scaind Mesh"
                 exposure=".35 " shadow-intensity="1" shadow-softness="1"
                 orientation = "orientation-string"
-                src="https://raw.githubusercontent.com/khalilacheche/VolReconIBRN/main/meshes/scanid_c.glb"
+                src="https://github.com/Youngju-Na/UFORecon-project-page/blob/master/ImageToStl.com_scan40.glb"
                 style="width: 100%; height: 600px; background-color: #404040"
                 poster="https://github.com/IVRL/VolRecon/raw/main/imgs/teaser.jpg" auto-rotate camera-controls
                 ar-status="not-presenting"></model-viewer>
