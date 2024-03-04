@@ -1,71 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+      content="UFORecon: Generalizable Sparse-View Surface Reconstruction from Arbitrary and UnFavOrable Data Sets">
+    <meta name="keywords"
+      content="UFORecon, multi-view reconstruction">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UFORecon: Generalizable Sparse-View Surface Reconstruction from Arbitrary and UnFavOrable Data Sets</title>
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
 
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
+    gtag('js', new Date());
 
-  <title>UFORecon: Generalizable Sparse-View Surface Reconstruction from Arbitrary and UnFavOrable Data Sets</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata:300,400,500,600,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet">
 
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'> -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="js/dics/dics.original.css">
-  <script src="static/js/dics/dics.original.js"></script>
-  <script src="static/js/event_handler.js"></script>
-
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-  <script src="static/js/video_comparison.js"></script>
-  <script src="static/js/app.js"></script>
-</head>
-<body>
-
-
+  <body>
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -147,294 +127,216 @@
     </div>
   </div>
 </section>
-
-
-<!-- Teaser video-->
-<section class="hero teaser">
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
+    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full_width">
+        <h2 class="title is-3">Overview</h2>
+        <img src="static/images/pipeline.png" class="center" />
+        <br>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Generalizable neural implicit surface reconstruction aims to obtain an accurate underlying geometry given a limited number of multi-view images from unseen scenes. However, most previous methods select only informative and relevant views using predefined scores for the training and testing phases. This constraint makes the model impractical because we cannot always ensure the availability of favorable combinations in real-world scenarios. We observe that previous methods output degenerate solutions under arbitrary and unfavorable sets. Building upon this finding, we propose UFORecon, a robust view-combination generalizable surface reconstruction framework. To this end, we apply cross-view matching transformers to model interactions between source images and build correlation frustums to capture global correlations. In addition, we explicitly encode pairwise feature similarities as view-consistent priors. Our proposed framework largely outperforms previous methods not only in view-combination generalizability but also in the existing generalizable protocol trained with favorable view-combinations.
+            The success of the Neural Radiance Fields (NeRF) in novel view
+            synthesis has inspired researchers to propose neural implicit
+            scene reconstruction. However, most existing neural implicit
+            reconstruction methods optimize per-scene parameters and
+            therefore lack generalizability to new scenes. We introduce
+            VolRecon, a novel generalizable implicit reconstruction method
+            with Signed Ray Distance Function (SRDF). To reconstruct the
+            scene with fine details and little noise, VolRecon combines
+            projection features aggregated from multi-view features, and
+            volume features interpolated from a coarse global feature
+            volume. Using a ray transformer, we compute SRDF values of
+            sampled points on a ray and then render color and depth. On DTU
+            dataset, VolRecon outperforms SparseNeuS by about 30% in sparse
+            view reconstruction and achieves comparable accuracy as MVSNet
+            in full view reconstruction. Furthermore, our approach exhibits
+            good generalization performance on the large-scale ETH3D
+            benchmark.
           </p>
+
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    <!--/ Abstract. -->
 
-
-
-<!-- Object-centric reconstruction -->
-<hr>
-<h5>Object-centric Reconstruction</h5>
-<div class="container">
-    <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-        <li class="nav-item">
-            <a class="nav-link active" onclick="objectSceneEvent(0)">Scan24</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" onclick="objectSceneEvent(1)">Scan37</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" onclick="objectSceneEvent(2)">Scan40</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" onclick="objectSceneEvent(3)">Scan63</a>
-        </li>
-    </ul>
-    <div class="b-dics" style="width: 2000px; font-weight: 600;">
-        <!-- <img src="static/images/carousel1.jpg" alt="NeuS">
-        <img src="static/images/carousel2.jpg" alt="Neuralangelo (Ours)">
-        <img src="static/images/carousel3.jpg" alt="NeuralWarp"> -->
-    </div>
-</div>
-
-<!--/ Paper video. -->
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-      <h3>
-          Reconstruction Results
-      </h3>
-
-      <table width="110%">
-          <tr>
-              <td align="left" valign="top" width="50%">
-                  <div class="video-compare-container" display:block>
-                      <video class="video" id="toaster_mesh" loop playsinline autoPlay muted src="static/videos/scan24_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
-                      <canvas height=0 class="videoMerge" id="toaster_meshMerge"></canvas>
-                  </div>
-              </td>
-              <td align="left" valign="top" width="50%">
-                  <div class="video-compare-container" display:block>
-                      <video class="video" id="toaster_normals" loop playsinline autoPlay muted src="static/videos/scan24_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
-                      <canvas height=0 class="videoMerge" id="toaster_normalsMerge"></canvas>
-                  </div>
-              </td>
-          </tr>
-      </table>
-      
-      <table width="110%">
-          <tr>
-              <td align="left" valign="top" width="50%">
-                  <div class="video-compare-container" display:block>
-                      <video class="video" id="helmet_mesh" loop playsinline autoPlay muted src="static/videos/scan40_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
-                      <canvas height=0 class="videoMerge" id="helmet_meshMerge"></canvas>
-                  </div>
-              </td>
-              <td align="left" valign="top" width="50%" display:block>
-                  <div class="video-compare-container">
-                      <video class="video" id="helmet_normals" loop playsinline autoPlay muted src="static/videos/scan40_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)"></video>
-                      <canvas height=0 class="videoMerge" id="helmet_normalsMerge"></canvas>
-                  </div>
-              </td>
-          </tr>
-      </table>
-      
-      
-</div>
-</div>
-
-
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-
-<!-- <section class="hero is-small"> -->
-  <!-- <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            
-            <source src="static/videos/carousel1.mp4"
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h3 class="title is-3">Reconstruction Results</h2>
+        <video id="dollyzoom" autoplay controls muted loop playsinline
+          height="100%">
+          <source src="static/videos/scan24_uforecon_best_unfavorable.mp4"
             type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-
-<!-- <h2 class="title is-3"></h2>
-<table>
-  <tbody>
-    <tr>
-      <td align="left" valign="top" width="50%">
-        <video class="video" preload="auto" id="water5" loop="" playsinline="" autoplay="" muted=""
-          src="static/videos/banner_video.mp4" onplay="resizeAndPlay(this)" style="height: 100px;">
         </video>
-
-        <canvas class="videoMerge" id="water5Merge"></canvas>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
-
-<!-- 
-<div class="container">
-  <ul class="nav nav-tabs nav-fill nav-justified" id="object-scale-recon">
-      <li class="nav-item">
-          <a class="nav-link active" onclick="objectSceneEvent(0)">Scan24</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" onclick="objectSceneEvent(1)">Scan37</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" onclick="objectSceneEvent(2)">Scan40</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" onclick="objectSceneEvent(3)">Scan63</a>
-      </li>
-  </ul>
-  <div class="b-dics" style="width: 3000px; font-weight: 600; height: 668.25px; opacity: 1;">
-      
-    
-  <div class="b-dics__section" data-function="b-dics__section" style="flex: 0 0 204px;"><div class="b-dics__image-container"><p class="b-dics__text">NeuS</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//neus.png" alt="NeuS" class="b-dics__image" style="left: 0px;"></div><div class="b-dics__slider" style="left: 204px;"></div></div><div class="b-dics__section" data-function="b-dics__section" style="flex: 2 0 449px;"><div class="b-dics__image-container"><p class="b-dics__text">Neuralangelo (Ours)</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//ours.png" alt="Neuralangelo (Ours)" class="b-dics__image" style="left: -204px;"></div><div class="b-dics__slider" style="left: 653px;"></div></div><div class="b-dics__section" data-function="b-dics__section" style="flex: 1 1 238px;"><div class="b-dics__image-container"><p class="b-dics__text">NeuralWarp</p><img src="https://research.nvidia.com/labs/dir/neuralangelo/assets/img/dtu24//neuralwarp.png" alt="NeuralWarp" class="b-dics__image" style="left: -653px;"></div></div></div>
-</div> -->
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
       </div>
     </div>
-  </section> -->
-<!--End paper poster -->
+    
 
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+    <!--/ Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <h3 class="title is-3">More results</h2>
     </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="tabs is-toggle is-fullwidth">
+      <ul id ="scan_selection">
+      </ul>
+    </div>
+    
+  <div id = "scan_content" class="has-text-centered">
+    <!--/ Scan 24 -->
+    <div class="tabcontent" style="display: block;" scan="24">
+      <!-- source views. -->
+      <h2 class="title is-5">Source views</h2>
+      <div class="columns is-centered has-text-centered" width="50%" >
+        <div class="column" width="20%"></div>
+        <div class="column">
+          <img src="static/images/source_views/24/1.png" />
+        </div>
+        <div class="column">
+          <img src="static/images/source_views/24/2.png" />
+        </div>
+        <div class="column">
+          <img src="static/images/source_views/24/3.png" />
         </div>
       </div>
+                
+      <!-- source views. -->
+      <!-- 3D model. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full_width">
+          <h2 class="title is-3">Reconstructed 3D model</h2>
+          <model-viewer id="transform" orientation="20deg 0 0" shadow-intensity="1" camera-controls touch-action="pan-y" ar
+            src="https://drive.google.com/file/d/1HCZ2VG9HcmU-2ilr22fRwcg6gYv9ob5_/view?usp=drive_link" alt="A 3D model of an astronaut">
+            <div class="controls">
+              <div>Roll: <input id="roll" value="20" size="3" class="number"> degrees</div>
+              <div>Pitch: <input id="pitch" value="0" size="3" class="number"> degrees</div>
+              <div>Yaw: <input id="yaw" value="0" size="3" class="number"> degrees</div>
+              <div>
+                Scale: X: <input id="x" value="1" size="3" class="number">,
+                Y: <input id="y" value="1" size="3" class="number">,
+                Z: <input id="z" value="1" size="3" class="number">
+              </div>
+              <button id="frame">Update Framing</button>
+            </div>
+          </model-viewer>
+          <script>
+            const modelViewerTransform = document.querySelector("model-viewer#transform");
+            const roll = document.querySelector('#roll');
+            const pitch = document.querySelector('#pitch');
+            const yaw = document.querySelector('#yaw');
+            const x = document.querySelector('#x');
+            const y = document.querySelector('#y');
+            const z = document.querySelector('#z');
+            const frame = document.querySelector('#frame');
+
+            frame.addEventListener('click', () => {
+              modelViewerTransform.updateFraming();
+            });
+
+            const updateOrientation = () => {
+              modelViewerTransform.orientation = `${roll.value}deg ${pitch.value}deg ${yaw.value}deg`;
+            };
+
+            const updateScale = () => {
+              modelViewerTransform.scale = `${x.value} ${y.value} ${z.value}`;
+            };
+
+            roll.addEventListener('input', () => {
+              updateOrientation();
+            });
+            pitch.addEventListener('input', () => {
+              updateOrientation();
+            });
+            yaw.addEventListener('input', () => {
+              updateOrientation();
+            });
+            x.addEventListener('input', () => {
+              updateScale();
+            });
+            y.addEventListener('input', () => {
+              updateScale();
+            });
+            z.addEventListener('input', () => {
+              updateScale();
+            });
+          </script>
+          <script>
+            const modelViewerParameters = document.querySelector("model-viewer#sphere");
+
+            modelViewerParameters.addEventListener("load", (ev) => {
+
+              let material = modelViewerParameters.model.materials[0];
+              console.log(material);  
+
+              let metalnessDisplay = document.querySelector("#metalness-value");
+              let roughnessDisplay = document.querySelector("#roughness-value");
+
+              metalnessDisplay.textContent = material.pbrMetallicRoughness.metallicFactor;
+              roughnessDisplay.textContent = material.pbrMetallicRoughness.roughnessFactor;
+
+              // Defaults to gold
+              //material.pbrMetallicRoughness.setBaseColorFactor([0.7294, 0.5333, 0.0392]);
+
+              document.querySelector('#metalness').addEventListener('input', (event) => {
+                material.pbrMetallicRoughness.setMetallicFactor(event.target.value);
+                metalnessDisplay.textContent = event.target.value;
+                console.log(event.target.value);
+              });
+
+              document.querySelector('#roughness').addEventListener('input', (event) => {
+                material.pbrMetallicRoughness.setRoughnessFactor(event.target.value);
+                roughnessDisplay.textContent = event.target.value;
+              });
+            });
+          </script>
+        </div>
+      </div>
+      <!--/ 3D model. -->
+      <!--/ Renderings -->
+      <h2 class="title is-3"></h2>
+      <table>
+        <tbody>
+          <tr>
+            <td align="left" valign="top" width="50%">
+              <video class="video" preload="auto" id="water5" loop="" playsinline="" autoplay="" muted=""
+                src="static/videos/scan40_uforecon_best_unfavorable.mp4" onplay="resizeAndPlay(this)" style="height: 100px;">
+              </video>
+    
+              <canvas class="videoMerge" id="water5Merge"></canvas>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!--/ Renderings -->
     </div>
+    <!--/ Scan 24 -->
   </div>
-</footer>
-
-<!-- Statcounter tracking code -->
+  </div>
   
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+</section>
 
-    <!-- End of Statcounter Code -->
+<section class="section" id="BibTeX">
+<div class="container is-max-desktop content has-text-centered">
+  <!-- <h2 class="title">Poster</h2> -->
+  <h2 class="title is-3" >Poster</h2>
+  <img src="static/images/poster.png" class="center" />
+  </iframe>
+</div>
+
+</section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{ren2022volrecon,
+author    = {Yufan Ren, Fangjinhua Wang, Tong Zhang, Marc Pollefeys, Sabine Süsstrunk},
+title     = {VolRecon: Volume Rendering of Signed Ray Distance Functions for Generalizable Multi-View Reconstruction},
+journal   = {arXiv},
+year      = {2022},
+}</code></pre>
+  </div>
+</section>
 
   </body>
   </html>
