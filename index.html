@@ -166,9 +166,9 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full_width">
         <h3 class="title is-3">Reconstruction Results</h2>
-        <video id="dollyzoom" autoplay controls muted loop playsinline
+        <video id="dollyzoom", autoplay muted loop controls
           height="100%">
-          <source src="static/videos/24.mp4"
+          <source src="static/videos/uforecon_best/favorable_40.mp4"
             type="video/mp4">
         </video>
       </div>
@@ -186,21 +186,39 @@
     
   <div id = "scan_content" class="has-text-centered">
     <!--/ Scan 24 -->
-    <div class="tabcontent" style="display: block;" scan="24">
+    <div class="tabcontent" style="display: block;" scan="40">
       <!-- source views. -->
       <h2 class="title is-5">Source views</h2>
       <div class="columns is-centered has-text-centered" width="50%" >
         <div class="column" width="20%"></div>
         <div class="column">
-          <img src="static/images/source_views/24/1.png" />
+          <img src="static/images/source_views/40/1.png" />
         </div>
         <div class="column">
-          <img src="static/images/source_views/24/2.png" />
+          <img src="static/images/source_views/40/2.png" />
         </div>
         <div class="column">
-          <img src="static/images/source_views/24/3.png" />
+          <img src="static/images/source_views/40/3.png" />
         </div>
       </div>
+
+      <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full_width">
+        <h3 class="title is-3">Reconstruction Results</h2>
+        <video id="dollyzoom", autoplay muted loop controls
+          height="100%">
+          <source src="static/videos/uforecon_best/favorable_40.mp4"
+            type="video/mp4">
+        </video>
+        <video id="dollyzoom", autoplay muted loop controls
+          height="100%">
+          <source src="static/videos/volrecon/favorable_40.mp4"
+            type="video/mp4">
+        </video>
+      </div>
+    </div>
+
                 
       <!-- source views. -->
       <!-- 3D model. -->
@@ -301,10 +319,9 @@
           <tr>
             <td align="left" valign="top" width="50%">
               <video class="video" preload="auto" id="water5" loop="" playsinline="" autoplay="" muted=""
-                src="static/videos/24.mp4" onplay="resizeAndPlay(this)" style="height: 100px;">
+                src="static/videos/uforecon_best/favorable_40.mp4" onplay="resizeAndPlay(this)" style="height: 100px;">
               </video>
-    
-              <canvas class="videoMerge" id="water5Merge"></canvas>
+              <canvas class="videoMerge" id="40Merge"></canvas>
             </td>
           </tr>
         </tbody>
@@ -321,7 +338,7 @@
 <div class="container is-max-desktop content has-text-centered">
   <!-- <h2 class="title">Poster</h2> -->
   <h2 class="title is-3" >Poster</h2>
-  <img src="static/images/concept.png" class="center" />
+  <!-- <img src="static/images/concept.png" class="center" /> -->
   </iframe>
 </div>
 

@@ -40,8 +40,7 @@ scan_content_template = `
               <tr>
                 <td align="left" valign="top" width="50%">
                   <video class="video" preload="auto" id="scanid" loop="" playsinline="" autoplay="" muted=""
-                    src="static/videos/scanid.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-
+                    src="static/videos/unfavorable_scanid.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
                   <canvas class="videoMerge" id="scanidMerge"></canvas>
                 </td>
               </tr>
@@ -101,8 +100,10 @@ $(document).ready(function () {
 });
 
 
+// controls rotation
 var transforms = {
-  24: "0 0 230deg",
+  24: "170deg 340deg 110deg",
+  40: "170deg 340deg 110deg",
   63: "0deg 210deg 300deg",
   65: "0deg 200deg 270deg",
   69: "0deg 210deg 290deg",
