@@ -55,7 +55,7 @@ scan_content_template = `
               <model-viewer alt="Scan scaind Mesh"
                 exposure=".35 " shadow-intensity="1" shadow-softness="1"
                 orientation = "orientation-string"
-                src="https://github.com/Youngju-Na/UFORecon-project-page/blob/master/ImageToStl.com_scan40.glb"
+                src="https://github.com/Youngju-Na/UFORecon-project-page/blob/master/scanid.glb"
                 style="width: 100%; height: 600px; background-color: #404040"
                 poster="https://github.com/IVRL/VolRecon/raw/main/imgs/teaser.jpg" auto-rotate camera-controls
                 ar-status="not-presenting"></model-viewer>
