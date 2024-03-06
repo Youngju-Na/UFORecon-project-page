@@ -92,7 +92,7 @@ scan_content_template = `
               <model-viewer alt="Scan scaind Mesh"
                 exposure=".35" shadow-intensity="1" shadow-softness="1"
                 orientation="orientation-string"
-                src="https://raw.githubusercontent.com/Youngju-Na/UFORecon-project-page/master/scanid.glb"
+                src="https://raw.githubusercontent.com/Youngju-Na/UFORecon-project-page/master/static/scanid.glb"
                 style="width: 700px; height: 700px; background-color: #404040"
                 poster="" auto-rotate camera-controls
                 ar-status="not-presenting"></model-viewer>
