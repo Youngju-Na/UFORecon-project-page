@@ -4,7 +4,7 @@
 // With additional modifications based on: https://jsfiddle.net/7sk5k4gp/13/
 
 
-var scans = [24, 40];
+var scans = [24, 40, 65, 106, 114];
 
 
 scan_selection_template = `
@@ -18,9 +18,10 @@ scan_selection_template = `
 
 scan_content_template = `
         <!--/ Scan 24 -->
+        
         <div class="tabcontent" style="display: block;" scan="scanid">
           <!-- source views. -->
-          <h4 class="title is-4">Source views</h2>
+          <h4 class="title is-4">Unfavorable Source Views</h2>
           <div class="columns is-centered has-text-centered">
             <div class="column">
               <img src="static/images/source_views/scanid/1.png" />
@@ -34,35 +35,70 @@ scan_content_template = `
           </div>
           <!-- source views. -->
           <!--/ Renderings -->
-          <h4 class="title is-4">Model renderings</h2>
+          <h4 class="title is-4">Results</h2>
           <table>
             <tbody>
-              <tr>
-                <td align="left" valign="top" width="50%">
-                  <video class="video" preload="auto" id="scanid" loop="" playsinline="" autoplay="" muted=""
-                    src="static/videos/unfavorable_scanid.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-                  <canvas class="videoMerge" id="scanidMerge"></canvas>
-                </td>
-              </tr>
+              <!--
+              //! uncomment below to toggle video 
+              // <tr>
+              //   <td align="left" valign="top" width="50%">
+              //     <video class="video" preload="auto" id="scanid" loop="" playsinline="" autoplay="" muted=""
+              //       src="static/videos/unfavorable_scanid.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
+              //     <canvas class="videoMerge" id="scanidMerge"></canvas>
+              //   </td>
+              // </tr>
+              //! ----------------------------
+              -->
+             
+              <div class="columns is-centered has-text-centered">
+              <!-- Volrecon video column -->
+              <div class="column video-container">
+                <h3 class="title is-5">Volrecon</h3>
+                <video id="volrecon" autoplay muted loop controls>
+                  <source src="static/videos/volrecon/unfavorable_scanid.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- UFORecon video column -->
+              <div class="column video-container">
+                <h3 class="title is-5">Ours</h3>
+                <video id="uforecon" autoplay muted loop controls>
+                  <source src="static/videos/uforecon_best/unfavorable_scanid.mp4" type="video/mp4">
+                </video>
+              </div>
+              <!-- UFORecon(random) video column -->
+              <div class="column video-container">
+                <h3 class="title is-5">Ours (Random Set Training)</h3>
+                <video id="volrecon" autoplay muted loop controls>
+                  <source src="static/videos/uforecon_random/unfavorable_scanid.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
             </tbody>
-          </table>
-          <!--/ Renderings -->
-          <!-- 3D model. -->
-          <div class="columns is-centered has-text-centered">
+            <!--/ Renderings -->
+            <div class="columns is-centered has-text-centered">
+            <!-- Column for images -->
+            <div class="column">
+            <h2 class="title is-4">Favorable Source Views</h2>
+              <!-- Image 1 -->
+              <img src="static/images/source_views_fav/scanid/1.png" alt="first favorable source" style="width: 100%;">
+              <!-- Image 2 -->
+              <img src="static/images/source_views_fav/scanid/2.png" alt="second favorable source" style="width: 100%;">
+              <!-- Image 3 -->
+              <img src="static/images/source_views_fav/scanid/3.png" alt="third favorable source" style="width: 100%;">
+            </div>
+            <!-- Column for 3D model -->
             <div class="column is-full_width">
-              <h2 class="title is-4">Reconstructed 3D model</h2>
+              <h2 class="title is-4">Favorable 3-Views (UFORecon)</h2>
               <model-viewer alt="Scan scaind Mesh"
-                exposure=".35 " shadow-intensity="1" shadow-softness="1"
-                orientation = "orientation-string"
+                exposure=".35" shadow-intensity="1" shadow-softness="1"
+                orientation="orientation-string"
                 src="https://raw.githubusercontent.com/Youngju-Na/UFORecon-project-page/master/scanid.glb"
-                style="width: 100%; height: 600px; background-color: #404040"
+                style="width: 700px; height: 700px; background-color: #404040"
                 poster="" auto-rotate camera-controls
                 ar-status="not-presenting"></model-viewer>
             </div>
+            </table>
           </div>
-          <!--/ 3D model. -->
-        </div>
-        <!--/ Scan 24 -->
 `;
 
 
@@ -104,9 +140,9 @@ $(document).ready(function () {
 var transforms = {
   24: "170deg 340deg 110deg",
   40: "170deg 340deg 110deg",
-  63: "0deg 210deg 300deg",
-  65: "0deg 200deg 270deg",
-  69: "0deg 210deg 290deg",
+  65: "170deg 340deg 110deg",
+  106: "170deg 340deg 110deg",
+  114: "170deg 340deg 110deg",
 };
 
 

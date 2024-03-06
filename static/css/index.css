@@ -175,7 +175,12 @@ body {
   
   **/
   
-  
+  .video-container video {
+    width: 480px; /* Adjust width as needed */
+    height: 270px; /* Adjust height as needed */
+    object-fit: cover; /* This ensures the video covers the set width/height, may cut off some parts */
+  }
+
   .video-compare-container {
     display: inline-block;
     line-height: 0;
