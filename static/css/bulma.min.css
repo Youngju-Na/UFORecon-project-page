@@ -1693,7 +1693,7 @@ a.box:active {
 }
 
 .buttons.is-centered {
-    justify-content: center
+    justify-content: center;
 }
 
 .buttons.is-centered:not(.has-addons) .button:not(.is-fullwidth) {

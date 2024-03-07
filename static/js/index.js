@@ -20,19 +20,19 @@ scan_content_template = `
         <!--/ Scan 24 -->
         
         <div class="tabcontent" style="display: block;" scan="scanid">
-          <!-- source views. -->
-          <h4 class="title is-4">Unfavorable Source Views</h2>
-          <div class="columns is-centered has-text-centered">
-            <div class="column">
-              <img src="static/images/source_views/scanid/1.png" />
-            </div>
-            <div class="column">
-              <img src="static/images/source_views/scanid/2.png" />
-            </div>
-            <div class="column">
-              <img src="static/images/source_views/scanid/3.png" />
-            </div>
+        <!-- source views. -->
+        <h4 class="title is-4">Unfavorable Source Views</h4> <!-- Fixed closing tag -->
+        <div class="columns is-centered has-text-centered" style="gap: 5px;"> <!-- Adjusted for closer columns -->
+          <div class="column" style="padding: 0.25rem;">
+            <img src="static/images/source_views/scanid/1.png" style="width: 70%; display: block; margin: auto;" />
           </div>
+          <div class="column" style="padding: 0.25rem;">
+            <img src="static/images/source_views/scanid/2.png" style="width: 70%; display: block; margin: auto;" />
+          </div>
+          <div class="column" style="padding: 0.25rem;">
+            <img src="static/images/source_views/scanid/3.png" style="width: 70%; display: block; margin: auto;" />
+          </div>
+        </div>
           <!-- source views. -->
           <!--/ Renderings -->
           <h4 class="title is-4">Results</h2>
@@ -44,7 +44,7 @@ scan_content_template = `
               //   <td align="left" valign="top" width="50%">
               //     <video class="video" preload="auto" id="scanid" loop="" playsinline="" autoplay="" muted=""
               //       src="static/videos/unfavorable_scanid.mp4" onplay="resizeAndPlay(this)" style="height: 0px;"></video>
-              //     <canvas class="videoMerge" id="scanidMerge"></canvas>
+              //     <canvas class="videoMerge" id="scanidMerge" width="800" height="600"></canvas>
               //   </td>
               // </tr>
               //! ----------------------------
@@ -179,72 +179,111 @@ function playVids(videoId) {
   var vid = document.getElementById(videoId);
 
   var position = 0.5;
-  var positionY = 0.5;
-  var vidWidth = vid.videoWidth / 2;
+  var vidWidth = vid.videoWidth/2;
   var vidHeight = vid.videoHeight;
 
   var mergeContext = videoMerge.getContext("2d");
 
-
+  
   if (vid.readyState > 3) {
-    vid.play();
+      vid.play();
 
-    function trackLocation(e) {
-      // Normalize to [0, 1]
-      bcr = videoMerge.getBoundingClientRect();
-      position = ((e.pageX - bcr.x) / bcr.width);
-      positionY = ((e.pageY - (bcr.top + window.scrollY)) / bcr.height);
-    }
-    function trackLocationTouch(e) {
-      // Normalize to [0, 1]
-      bcr = videoMerge.getBoundingClientRect();
-      position = ((e.touches[0].pageX - bcr.x) / bcr.width);
-      positionY = ((e.touches[0].pageY - (bcr.top + window.scrollY)) / bcr.height);
-    }
+      function trackLocation(e) {
+          // Normalize to [0, 1]
+          bcr = videoMerge.getBoundingClientRect();
+          position = ((e.pageX - bcr.x) / bcr.width);
+      }
+      function trackLocationTouch(e) {
+          // Normalize to [0, 1]
+          bcr = videoMerge.getBoundingClientRect();
+          position = ((e.touches[0].pageX - bcr.x) / bcr.width);
+      }
 
-    videoMerge.addEventListener("mousemove", trackLocation, false);
-    videoMerge.addEventListener("touchstart", trackLocationTouch, false);
-    videoMerge.addEventListener("touchmove", trackLocationTouch, false);
+      videoMerge.addEventListener("mousemove",  trackLocation, false); 
+      videoMerge.addEventListener("touchstart", trackLocationTouch, false);
+      videoMerge.addEventListener("touchmove",  trackLocationTouch, false);
 
 
-    function drawLoop() {
-      mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
-      var colStart = (vidWidth * position).clamp(0.0, vidWidth);
-      var colWidth = (vidWidth - (vidWidth * position)).clamp(0.0, vidWidth);
-      mergeContext.drawImage(vid, colStart + vidWidth, 0, colWidth, vidHeight, colStart, 0, colWidth, vidHeight);
+      function drawLoop() {
+          mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
+          var colStart = (vidWidth * position).clamp(0.0, vidWidth);
+          var colWidth = (vidWidth - (vidWidth * position)).clamp(0.0, vidWidth);
+          mergeContext.drawImage(vid, colStart+vidWidth, 0, colWidth, vidHeight, colStart, 0, colWidth, vidHeight);
+          requestAnimationFrame(drawLoop);
+
+          
+          var arrowLength = 0.09 * vidHeight;
+          var arrowheadWidth = 0.025 * vidHeight;
+          var arrowheadLength = 0.04 * vidHeight;
+          var arrowPosY = vidHeight / 10;
+          var arrowWidth = 0.007 * vidHeight;
+          var currX = vidWidth * position;
+
+          // Draw circle
+          mergeContext.arc(currX, arrowPosY, arrowLength*0.7, 0, Math.PI * 2, false);
+          mergeContext.fillStyle = "#FFD79340";
+          mergeContext.fill()
+          //mergeContext.strokeStyle = "#444444";
+          //mergeContext.stroke()
+          
+          // Draw border
+          mergeContext.beginPath();
+          mergeContext.moveTo(vidWidth*position, 0);
+          mergeContext.lineTo(vidWidth*position, vidHeight);
+          mergeContext.closePath()
+          mergeContext.strokeStyle = "#444444";
+          mergeContext.lineWidth = 5;            
+          mergeContext.stroke();
+
+          // Draw arrow
+          mergeContext.beginPath();
+          mergeContext.moveTo(currX, arrowPosY - arrowWidth/2);
+          
+          // Move right until meeting arrow head
+          mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY - arrowWidth/2);
+          
+          // Draw right arrow head
+          mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY - arrowheadWidth/2);
+          mergeContext.lineTo(currX + arrowLength/2, arrowPosY);
+          mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY + arrowheadWidth/2);
+          mergeContext.lineTo(currX + arrowLength/2 - arrowheadLength/2, arrowPosY + arrowWidth/2);
+
+          // Go back to the left until meeting left arrow head
+          mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY + arrowWidth/2);
+          
+          // Draw left arrow head
+          mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY + arrowheadWidth/2);
+          mergeContext.lineTo(currX - arrowLength/2, arrowPosY);
+          mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY  - arrowheadWidth/2);
+          mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY);
+          
+          mergeContext.lineTo(currX - arrowLength/2 + arrowheadLength/2, arrowPosY - arrowWidth/2);
+          mergeContext.lineTo(currX, arrowPosY - arrowWidth/2);
+
+          mergeContext.closePath();
+
+          mergeContext.fillStyle = "#444444";
+          mergeContext.fill();
+      }
       requestAnimationFrame(drawLoop);
-
-
-      var arrowLength = 0.09 * vidHeight;
-      var arrowheadWidth = 0.025 * vidHeight;
-      var arrowheadLength = 0.04 * vidHeight;
-      var arrowPosY = positionY * vidHeight;
-      var arrowWidth = 0.007 * vidHeight;
-      var currX = vidWidth * position;
-      drawOverlay(mergeContext, vidWidth, vidHeight, position, positionY, arrowLength, arrowheadWidth, arrowheadLength, arrowPosY, arrowWidth, currX);
-    }
-    requestAnimationFrame(drawLoop);
-  }
+  } 
 }
 
 Number.prototype.clamp = function (min, max) {
   return Math.min(Math.max(this, min), max);
 };
 
-
-function resizeAndPlay(element) {
+    
+function resizeAndPlay(element)
+{
   var cv = document.getElementById(element.id + "Merge");
-  cv.width = element.videoWidth / 2;
+  cv.width = element.videoWidth/2;
   cv.height = element.videoHeight;
-
   element.play();
   element.style.height = "0px";  // Hide video without stopping it
-
+    
   playVids(element.id);
 }
-
-
-
 
 
 
@@ -299,20 +338,20 @@ function playVidsDual(videoId, videoId2) {
 
 
     function drawLoop() {
-      mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
-      mergeContext2.drawImage(vid2, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
-      var colStart = (vidWidth * position).clamp(0.0, vidWidth);
-      var colWidth = (vidWidth - (vidWidth * position)).clamp(0.0, vidWidth);
-      mergeContext.drawImage(vid, colStart + vidWidth, 0, colWidth, vidHeight, colStart, 0, colWidth, vidHeight);
-      mergeContext2.drawImage(vid2, colStart + vidWidth, 0, colWidth, vidHeight, colStart, 0, colWidth, vidHeight);
-      requestAnimationFrame(drawLoop);
-
-      drawOverlay(mergeContext, vidWidth, vidHeight, position, positionY);
-      drawOverlay(mergeContext2, vidWidth, vidHeight, position, positionY);
-
+      // Assuming both videos have the same dimensions and you want them fully visible.
+      // Clear the canvas for fresh drawing.
+      mergeContext.clearRect(0, 0, videoMerge.width, videoMerge.height);
+      mergeContext2.clearRect(0, 0, videoMerge2.width, videoMerge2.height);
+      
+      // Draw videos side by side or overlaid fully. Adjust based on exact need.
+      // For side-by-side with both fully visible, you'd adjust the canvas width to be the sum of both video widths.
+      // This example assumes an overlay where both videos are drawn on top of each other.
+      mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight);
+      mergeContext2.drawImage(vid2, 0, 0, vidWidth, vidHeight);
     }
-    requestAnimationFrame(drawLoop);
-  }
+      // Continue with animation loop
+      requestAnimationFrame(drawLoop);
+    }
 }
 
 Number.prototype.clamp = function (min, max) {
