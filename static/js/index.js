@@ -4,7 +4,8 @@
 // With additional modifications based on: https://jsfiddle.net/7sk5k4gp/13/
 
 
-var scans = [24, 40, 65, 106, 114];
+var scans = [24, 40, 55, 65, 69, 97, ];
+var scans_2 = [105, 106, 110, 114, 118, 122];
 
 
 scan_selection_template = `
@@ -74,6 +75,7 @@ scan_content_template = `
               </div>
             </div>
             </tbody>
+          
             <!--/ Renderings -->
             <div class="columns is-centered has-text-centered">
             <!-- Column for images -->
@@ -85,7 +87,8 @@ scan_content_template = `
               <img src="static/images/source_views_fav/scanid/2.png" alt="second favorable source" style="width: 100%;">
               <!-- Image 3 -->
               <img src="static/images/source_views_fav/scanid/3.png" alt="third favorable source" style="width: 100%;">
-            </div>
+           </div>
+
             <!-- Column for 3D model -->
             <div class="column is-full_width">
               <h2 class="title is-4">Favorable 3-Views (UFORecon)</h2>
@@ -97,6 +100,8 @@ scan_content_template = `
                 poster="" auto-rotate camera-controls
                 ar-status="not-presenting"></model-viewer>
             </div>
+          
+            
             </table>
           </div>
 `;
@@ -122,6 +127,7 @@ function loadScanContent() {
   for (let i = 0; i < scans.length; i++) {
     const scan = scans[i];
     element_html = scan_content_template.replaceAll("scanid", scan);
+    
     element_html = element_html.replaceAll("orientation-string", transforms[scan]);
     if (i != 0) {
       element_html = element_html.replaceAll("style=\"display: block;\"", "style=\"display: none;\"");
@@ -139,6 +145,7 @@ $(document).ready(function () {
 // controls rotation
 var transforms = {
   24: "170deg 340deg 110deg",
+  37: "170deg 340deg 110deg",
   40: "170deg 340deg 110deg",
   65: "170deg 340deg 110deg",
   106: "170deg 340deg 110deg",
