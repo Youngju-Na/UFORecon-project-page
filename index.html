@@ -135,23 +135,15 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The success of the Neural Radiance Fields (NeRF) in novel view
-            synthesis has inspired researchers to propose neural implicit
-            scene reconstruction. However, most existing neural implicit
-            reconstruction methods optimize per-scene parameters and
-            therefore lack generalizability to new scenes. We introduce
-            VolRecon, a novel generalizable implicit reconstruction method
-            with Signed Ray Distance Function (SRDF). To reconstruct the
-            scene with fine details and little noise, VolRecon combines
-            projection features aggregated from multi-view features, and
-            volume features interpolated from a coarse global feature
-            volume. Using a ray transformer, we compute SRDF values of
-            sampled points on a ray and then render color and depth. On DTU
-            dataset, VolRecon outperforms SparseNeuS by about 30% in sparse
-            view reconstruction and achieves comparable accuracy as MVSNet
-            in full view reconstruction. Furthermore, our approach exhibits
-            good generalization performance on the large-scale ETH3D
-            benchmark.
+            Generalizable neural implicit surface reconstruction aims to obtain an accurate underlying geometry given a limited number of multi-view images from unseen scenes. 
+            However, existing methods select only informative and relevant views using predefined scores for training and testing phases. 
+            This constraint renders the model impractical in real-world scenarios, where the availability of favorable combinations cannot always be ensured. 
+            We introduce and validate a view-combination score to indicate the effectiveness of the input view combination. 
+            We observe that previous methods output degenerate solutions under arbitrary and unfavorable sets.
+            Building upon this finding, we propose UFORecon, a robust view-combination generalizable surface reconstruction framework.
+            To achieve this, we apply cross-view matching transformers to model interactions between source images and build correlation frustums to capture global correlations.
+            Additionally, we explicitly encode pairwise feature similarities as view-consistent priors. Our proposed framework significantly outperforms previous methods in terms of view-combination generalizability and also in the conventional generalizable protocol trained with favorable view-combinations.
+            The code is available at this <a href="https://github.com/Youngju-Na/UFORecon/" target="_blank">link</a>.
           </p>
 
         </div>
